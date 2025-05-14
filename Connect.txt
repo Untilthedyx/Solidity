@@ -1,0 +1,2 @@
+Connect method
+remixd -s F:\计算机学习资料\Solidity学习\Solidity --remix-ide https://remix.ethereum.org/
