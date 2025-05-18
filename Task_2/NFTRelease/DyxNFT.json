@@ -1,0 +1,8 @@
+{
+    "name":"DyxNFT",
+    "description":"A picture of the shape",
+    "image":"ipfs://Qmb4RniYLuA8UXf9fLMiWhRHREiZQFgVupmtDtV3rXdhhn",
+    "attributes":[
+        {"trait_type":"Shape","value":"Triangle"}
+    ]
+}
