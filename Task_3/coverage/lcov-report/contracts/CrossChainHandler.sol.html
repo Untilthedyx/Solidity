@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\CrossChainHandler.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> CrossChainHandler.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.2% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/49</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+&nbsp;
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import  {IRouterClient} from"@chainlink/contracts/src/v0.8/ccip/interfaces/IRouterClient.sol";
+import "@chainlink/contracts/src/v0.8/ccip/libraries/Client.sol";
+import "./AuctionHandler.sol";
+&nbsp;
+&nbsp;
+library CrossChainHandler {
+&nbsp;
+    struct CrossChainBid{
+        uint64 sourceChainId;
+        address bidder;
+        uint256 amount;
+        uint256 auctionId;
+        address tokenAddress;
+        bool executed;
+    }
+&nbsp;
+    struct CCIPStorage{
+        mapping (bytes32 =&gt; CrossChainBid)  crossChainBids;
+        mapping (uint64 =&gt; bool)  allowedSourceChains;
+        IRouterClient  ccipRouter;
+    }
+&nbsp;
+    event CrossChainBidReceived(bytes32 indexed messageId, uint64 sourceChainId, address bidder, uint256 amount);
+    event CrossChainBidExecuted(bytes32 indexed messageId,uint256 auctionId);
+    event BidPlaced(uint256 indexed auctionId, address bidder, uint256 amount, address tokenAddress);
+&nbsp;
+     function initializeCCIP(CCIPStorage storage self, address _ccipRouter) internal{
+        self.ccipRouter = IRouterClient(_ccipRouter);
+&nbsp;
+        self.allowedSourceChains[1]=true;//Ethereum
+        self.allowedSourceChains[43114]=true;//Avalanche
+        self.allowedSourceChains[137]=true; //Polygon
+        self.allowedSourceChains[56]=true;//BSC
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >     function sendCrossChainBid(CCIPStorage storage self, uint64 _destinationChainId, uint256 _auctionId, uint256 _amount,address _tokenAddress,address contractAddress) internal returns (bytes32){</span>
+<span class="cstat-no" title="statement not covered" >        require(address(self.ccipRouter)!=address(0),"CCIP not configured")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if(_tokenAddress!=address(0)){</span>
+<span class="cstat-no" title="statement not covered" >            IERC20(_tokenAddress).transferFrom(msg.sender,contractAddress,_amount)</span>;
+        }else{
+<span class="cstat-no" title="statement not covered" >            require(msg.value&gt;=_amount,"Insufficient ETH for bid")</span>;
+        }
+        
+<span class="cstat-no" title="statement not covered" >        Client.EVM2AnyMessage memory message = Client.EVM2AnyMessage(</span>
+            {
+                receiver: abi.encode(contractAddress),
+                data:abi.encode( msg.sender,_auctionId,_amount,_tokenAddress),
+                tokenAmounts: new Client.EVMTokenAmount[](0),
+                feeToken: address(0),
+                extraArgs: Client._argsToBytes(Client.EVMExtraArgsV1(
+                    {
+                        gasLimit: 200000
+                    }
+                ))
+            }
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 ccipFee = self.ccipRouter.getFee(_destinationChainId,message);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if(_tokenAddress==address(0)){</span>
+<span class="cstat-no" title="statement not covered" >            require(msg.value&gt;=ccipFee+_amount,"Insufficient ETH for bid and CCIP fee")</span>;
+        }else{
+<span class="cstat-no" title="statement not covered" >            require(msg.value&gt;=ccipFee,"Insufficient ETH for CCIP fee")</span>;
+        }
+        //发送CCIP消息
+<span class="cstat-no" title="statement not covered" >        bytes32 messageId = self.ccipRouter.ccipSend{value:msg.value}(_destinationChainId,message);</span>
+        //记录跨链出价信息
+        self.crossChainBids[messageId] = CrossChainBid({
+            sourceChainId: 0,
+            bidder:msg.sender,
+            amount:_amount,
+            auctionId:_auctionId,
+            tokenAddress:_tokenAddress,
+            executed:false
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return messageId;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function receiveCrossChainMessage(CCIPStorage storage self,Client.Any2EVMMessage memory message) internal returns (bytes32) {</span>
+<span class="cstat-no" title="statement not covered" >        require(self.allowedSourceChains[message.sourceChainSelector],"Invalid source chain")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        (address bidder, uint256 auctionId, uint256 amount, address tokenAddress )= abi.decode(message.data,(address,uint256,uint256,address));</span>
+&nbsp;
+        //记录跨链出价信息
+        self.crossChainBids[message.messageId] = CrossChainBid({
+            sourceChainId: message.sourceChainSelector,
+            bidder:bidder,
+            amount:amount,
+            auctionId:auctionId,
+            tokenAddress:tokenAddress,
+            executed:false
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit CrossChainBidReceived(message.messageId, message.sourceChainSelector, bidder, amount);</span>
+<span class="cstat-no" title="statement not covered" >        return message.messageId;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function executeCrossChainBid(CCIPStorage storage self, bytes32 messageId,mapping(uint256 =&gt; AuctionHandler.Auction) storage auctions,AggregatorV3Interface ethPriceFeed,mapping(address =&gt; AggregatorV3Interface) storage priceFeeds) internal {</span>
+<span class="cstat-no" title="statement not covered" >        CrossChainBid memory bid = self.crossChainBids[messageId];</span>
+<span class="cstat-no" title="statement not covered" >        require(!bid.executed,"Bid already executed")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        AuctionHandler.Auction storage auction = auctions[bid.auctionId];</span>
+<span class="cstat-no" title="statement not covered" >        if(auction.isended||block.timestamp&gt;auction.startTime+auction.duration){</span>
+            self.crossChainBids[messageId].executed = true;
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 bidValue = PriceConverter.convertToUSD(bid.amount, bid.tokenAddress, ethPriceFeed, priceFeeds);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 startPriceValue = PriceConverter.convertToUSD(auction.startPrice, auction.tokenAddress, ethPriceFeed, priceFeeds);</span>
+<span class="cstat-no" title="statement not covered" >        uint256 highestBidValue = PriceConverter.convertToUSD(auction.highestBid, auction.tokenAddress, ethPriceFeed, priceFeeds);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if(bidValue&gt;=startPriceValue&amp;&amp;bidValue&gt;highestBidValue){</span>
+<span class="cstat-no" title="statement not covered" >            if(auction.highestBidder!=address(0)){</span>
+<span class="cstat-no" title="statement not covered" >                if(auction.tokenAddress==address(0)){</span>
+<span class="cstat-no" title="statement not covered" >                    payable (auction.highestBidder).transfer(auction.highestBid)</span>;
+                }else{
+<span class="cstat-no" title="statement not covered" >                    IERC20(auction.tokenAddress).transfer(auction.highestBidder,auction.highestBid)</span>;
+                }
+            }
+&nbsp;
+            auction.highestBidder=bid.bidder;
+            auction.highestBid=bid.amount;
+            auction.tokenAddress=bid.tokenAddress;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            emit BidPlaced(bid.auctionId, bid.bidder, bid.amount, bid.tokenAddress);</span>
+        }
+&nbsp;
+        self.crossChainBids[messageId].executed = true;
+<span class="cstat-no" title="statement not covered" >        emit CrossChainBidExecuted(messageId, bid.auctionId);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function markBidExecuted(CCIPStorage storage self, bytes32 messageId) internal {</span>
+<span class="cstat-no" title="statement not covered" >        require(!self.crossChainBids[messageId].executed,"Bid already executed")</span>;
+        self.crossChainBids[messageId].executed = true;
+<span class="cstat-no" title="statement not covered" >        emit CrossChainBidExecuted(messageId,self.crossChainBids[messageId].auctionId);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getCrossChainBid(CCIPStorage storage self, bytes32 messageId) internal view returns(CrossChainBid memory){</span>
+<span class="cstat-no" title="statement not covered" >        return self.crossChainBids[messageId];</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >     function setAllowedSourceChain(CCIPStorage storage self,uint64 chainId, bool allowed) internal{</span>
+        self.allowedSourceChains[chainId] = allowed;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function setCCIPRouter(CCIPStorage storage self,address _ccipRouter) internal {</span>
+        self.ccipRouter = IRouterClient(_ccipRouter);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function isSourceChainAllowde(CCIPStorage storage self,uint64 chainId)internal view returns(bool ) {</span>
+<span class="cstat-no" title="statement not covered" >        return self.allowedSourceChains[chainId];</span>
+    }
+&nbsp;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 06 2025 20:02:43 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

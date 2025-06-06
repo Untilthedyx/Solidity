@@ -25,14 +25,14 @@ module.exports = {
       chainId:31337
     },
     sepolia:{
-      url:process.env.SEPOLIA_URL || "https://sepolia.infura.io/v3/YOUR_INFURA_KEY",
+      url:process.env.SEPOLIA_URL ,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 11155111,
       gasPrice: 10000000000,
       gas: 6000000
     },
     goerli: {
-      url: process.env.GOERLI_URL || "https://goerli.infura.io/v3/YOUR_INFURA_KEY",
+      url: process.env.GOERLI_URL ,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
       chainId: 5,
       gasPrice: 20000000000,
@@ -47,6 +47,8 @@ module.exports = {
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
+    outputFile: 'gas-report.json',
+    noColors: true,
     currency: "USD",
     gasPrice: 20
   },

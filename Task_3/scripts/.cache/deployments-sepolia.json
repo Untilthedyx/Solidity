@@ -1,0 +1,14 @@
+{
+  "network": "sepolia",
+  "timestamp": "2025-06-06T12:22:40.923Z",
+  "contracts": {
+    "NFT": "0x2052F0F31A5e080B0c9fC9BD624A5CB18E1198b0",
+    "NFTAuctionImplementation": "0x83F76D3f46a18F9e06C5d1D31b100837776eF917",
+    "AuctionFactory": "0x3062AA84f0d2f9940De34c6b42C6e06063663DaE",
+    "SampleAuction": "0x94A8bcC152e3021eDDe1A13b5d3550ECde74bbfE"
+  },
+  "chainlink": {
+    "ethPriceFeed": "0x694AA1769357215DE4FAC081bf1f309aDC325306",
+    "ccipRouter": "0xD0daae2231E9CB96b94C8512223533293C3693Bf"
+  }
+}

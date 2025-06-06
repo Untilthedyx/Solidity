@@ -14,7 +14,14 @@
     "verify:sepolia": "hardhat verify --network sepolia",
     "clean": "hardhat clean"
   },
-  "keywords": ["NFT", "Auction", "Chainlink", "CCIP", "DeFi", "Solidity"],
+  "keywords": [
+    "NFT",
+    "Auction",
+    "Chainlink",
+    "CCIP",
+    "DeFi",
+    "Solidity"
+  ],
   "author": "DYX",
   "license": "MIT",
   "devDependencies": {
@@ -22,8 +29,9 @@
     "@openzeppelin/hardhat-upgrades": "^3.0.0",
     "hardhat": "^2.24.1",
     "hardhat-deploy": "^0.11.45",
-    "hardhat-gas-reporter": "^1.0.9",
-    "solidity-coverage": "^0.8.5"
+    "hardhat-gas-reporter": "^1.0.10",
+    "mocha-junit-reporter": "^2.2.1",
+    "solidity-coverage": "^0.8.16"
   },
   "dependencies": {
     "@chainlink/contracts": "^1.3.0",

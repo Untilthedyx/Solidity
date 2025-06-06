@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\NFTAuction.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> NFTAuction.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">62.16% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>23/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.81% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>21/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.89% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">64% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>32/50</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+&nbsp;
+import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import {AccessControlUpgradeable} from "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
+import {ReentrancyGuardUpgradeable}from"@openzeppelin/contracts-upgradeable/utils/ReentrancyGuardUpgradeable.sol";
+import {PausableUpgradeable}from"@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
+import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@chainlink/contracts/src/v0.8/ccip/libraries/Client.sol";
+import "./CrossChainHandler.sol";
+import "./PriceConverter.sol";
+import "./AuctionHandler.sol";
+&nbsp;
+&nbsp;
+contract NFTAuction is UUPSUpgradeable, AccessControlUpgradeable, ReentrancyGuardUpgradeable, PausableUpgradeable{
+    using CrossChainHandler for CrossChainHandler.CCIPStorage;
+    using PriceConverter for uint256;
+    using AuctionHandler for mapping(uint256 =&gt; AuctionHandler.Auction);
+    
+    bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
+    bytes32 public constant UPGRADER_ROLE = keccak256("UPGRADER_ROLE");
+&nbsp;
+    CrossChainHandler.CCIPStorage private ccipStorage;
+&nbsp;
+    address public ccipRouterAddress;
+    
+&nbsp;
+    //拍卖结构体
+&nbsp;
+    mapping(uint256 =&gt; AuctionHandler.Auction) public auctions;
+    // address public admin;
+    uint256 public nextAuctionId;
+&nbsp;
+    AggregatorV3Interface public ethPriceFeed;
+    mapping (address=&gt;AggregatorV3Interface) public priceFeeds;
+&nbsp;
+    uint256 public baseFeePercentage;
+    uint256 public maxFeePercentage;
+    uint256 public minFeePercentage;
+    address public feeCollector;
+&nbsp;
+    
+&nbsp;
+    event AuctionCreated(uint256 indexed auctionId, address indexed seller,address nftAddress, uint256 nftId);
+&nbsp;
+    
+&nbsp;
+    function initialize(address _ccipRouter,address _ethPriceFeed,address admin) public <span class="missing-if-branch" title="else path not taken" >E</span>initializer{
+        __UUPSUpgradeable_init();
+        __AccessControl_init();
+        __ReentrancyGuard_init();
+        __Pausable_init();
+&nbsp;
+        _grantRole(DEFAULT_ADMIN_ROLE, admin);
+        _grantRole(ADMIN_ROLE, admin);
+        _grantRole(UPGRADER_ROLE, admin);
+&nbsp;
+        ethPriceFeed=AggregatorV3Interface(_ethPriceFeed);
+        ccipRouterAddress = _ccipRouter;
+        ccipStorage.initializeCCIP( _ccipRouter);
+        feeCollector = admin;
+&nbsp;
+        baseFeePercentage = 250;
+        maxFeePercentage = 500;
+        minFeePercentage = 100;
+    }
+&nbsp;
+    function setPriceFeed(address _priceFeedAddress, address tokenAddress) external onlyRole(ADMIN_ROLE) {
+        priceFeeds[tokenAddress]=AggregatorV3Interface(_priceFeedAddress);
+    }
+&nbsp;
+    //设置手续费参数
+<span class="fstat-no" title="function not covered" >    function setFeeParamters(uint256 _baseFeePercentage, uint256 _minFeePercentage,uint256 _maxFeePercentage, address _feeCollector) external onlyRole(ADMIN_ROLE) {</span>
+<span class="cstat-no" title="statement not covered" >        require(_minFeePercentage&lt;=_baseFeePercentage&amp;&amp;_baseFeePercentage&lt;=_maxFeePercentage,"Invalid fee range")</span>;
+<span class="cstat-no" title="statement not covered" >        require(_maxFeePercentage&lt;=1000,"Max fee too high")</span>;
+        
+        
+        baseFeePercentage = _baseFeePercentage;
+        minFeePercentage = _minFeePercentage;
+        maxFeePercentage = _maxFeePercentage;
+        feeCollector = _feeCollector;
+    }
+&nbsp;
+    //计算动态手续费
+    function calculateDynamicFee(uint256 amount, address tokenAddress) public view returns(uint256){
+        return PriceConverter.calculateDynamicFee(amount, tokenAddress, ethPriceFeed, priceFeeds, baseFeePercentage, minFeePercentage, maxFeePercentage);
+    }
+&nbsp;
+&nbsp;
+&nbsp;
+    
+    //创建拍卖
+    function createAuction (uint256 _duration, uint256 _startPrice, address _nftAddress, uint256 _nftId, address _tokenAddress) external whenNotPaused <span class="missing-if-branch" title="else path not taken" >E</span>nonReentrant{
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_duration&gt;=100,"Auction duration needs to be at least 100s");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_startPrice&gt;0,"Start price must be greater than 0");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_tokenAddress == address(0)||address(priceFeeds[_tokenAddress])!= address(0),"Token price feed not configured");
+        
+        IERC721 nft = IERC721(_nftAddress);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(nft.ownerOf(_nftId)==msg.sender,"NFT not owned by the sender");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(<span class="branch-0 cbranch-no" title="branch not covered" >nft.isApprovedForAll(msg.sender, address(this))</span>|| nft.getApproved(_nftId)==address(this),"NFT not approved for auction");
+&nbsp;
+        nft.transferFrom(msg.sender, address(this),_nftId);
+&nbsp;
+        uint256 feePercentage = calculateDynamicFee(_startPrice, _tokenAddress);
+&nbsp;
+&nbsp;
+        auctions[nextAuctionId]=AuctionHandler.Auction(
+            {
+                seller:msg.sender,
+                startPrice:_startPrice,
+                startTime:block.timestamp,
+                duration:_duration,
+        
+                isended:false,
+                highestBid:0,
+                highestBidder:address(0),
+                
+                nftAddress:_nftAddress,
+                nftId:_nftId,
+                tokenAddress:_tokenAddress,
+&nbsp;
+                feePercentage:feePercentage
+            }
+        );
+        emit AuctionCreated(nextAuctionId,msg.sender,_nftAddress,_nftId);
+        nextAuctionId++;
+        
+    }
+    //出价
+    function placeBid(uint256 _auctionId, uint256 _amount,address _tokenAddress) external payable <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused <span class="missing-if-branch" title="else path not taken" >E</span>nonReentrant{
+       AuctionHandler.placeBid(_auctionId, _amount, _tokenAddress,auctions, ethPriceFeed, priceFeeds, address(this));
+    }
+    //结束拍卖
+    function endAuction(uint256 _auctionId) external <span class="missing-if-branch" title="else path not taken" >E</span>nonReentrant{
+       AuctionHandler.Auction storage auction = auctions[_auctionId];
+       <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == auction.seller||<span class="branch-1 cbranch-no" title="branch not covered" >block.timestamp &gt; auction.startTime + auction.duration</span>||hasRole(ADMIN_ROLE,msg.sender),"Not authorized or auction not expired");
+       AuctionHandler.endAuction(_auctionId, auctions,feeCollector,address(this));
+    }
+&nbsp;
+    
+&nbsp;
+&nbsp;
+    //CCIP
+    //发送CCIP消息
+<span class="fstat-no" title="function not covered" >    function sendCrossChainBid(uint64 _destinationChainId, uint256 _auctionId, uint256 _amount, address _tokenAddress) external payable whenNotPaused  nonReentrant {</span>
+<span class="cstat-no" title="statement not covered" >        ccipStorage.sendCrossChainBid(_destinationChainId, _auctionId, _amount, _tokenAddress,address(this))</span>;
+    }
+    //接收CCIP消息
+<span class="fstat-no" title="function not covered" >    function ccipReceive(Client.Any2EVMMessage memory message) external{</span>
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == ccipRouterAddress, "Only CCIP router can call")</span>;
+<span class="cstat-no" title="statement not covered" >        bytes32 messageId = ccipStorage.receiveCrossChainMessage(message);</span>
+<span class="cstat-no" title="statement not covered" >        ccipStorage.executeCrossChainBid(messageId, auctions, ethPriceFeed, priceFeeds)</span>;
+    }
+&nbsp;
+    //手动执行跨链出价
+<span class="fstat-no" title="function not covered" >    function executeCrossChainBid(bytes32 messageId) external nonReentrant {</span>
+<span class="cstat-no" title="statement not covered" >        ccipStorage.executeCrossChainBid(messageId, auctions, ethPriceFeed, priceFeeds)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function setAllowedSourceChain(uint64 chainId, bool allowed) external onlyRole(ADMIN_ROLE) {</span>
+<span class="cstat-no" title="statement not covered" >        ccipStorage.setAllowedSourceChain(chainId, allowed)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function setCCIPRouter(address _ccipRouter) external onlyRole(ADMIN_ROLE) {</span>
+<span class="cstat-no" title="statement not covered" >        ccipStorage.setCCIPRouter(_ccipRouter)</span>;
+    }
+&nbsp;
+    function pause() external onlyRole(ADMIN_ROLE) {
+        _pause();
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function unpause() external onlyRole(ADMIN_ROLE) {</span>
+<span class="cstat-no" title="statement not covered" >        _unpause()</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function emergencyWithdraw(address tokenAddress, uint256 amount) external onlyRole(ADMIN_ROLE){</span>
+<span class="cstat-no" title="statement not covered" >        if(tokenAddress==address(0)){</span>
+<span class="cstat-no" title="statement not covered" >            payable (msg.sender).transfer(amount)</span>;
+        }else{
+<span class="cstat-no" title="statement not covered" >            IERC20(tokenAddress).transfer(msg.sender,amount)</span>;
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function emergencyWithdrawNFT(address nftAddress, uint256 nftId) external onlyRole(ADMIN_ROLE){</span>
+<span class="cstat-no" title="statement not covered" >        IERC721(nftAddress).transferFrom(address(this),msg.sender,nftId)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function _authorizeUpgrade(address) internal override onlyRole(UPGRADER_ROLE) {}</span>
+&nbsp;
+    receive() external payable {}
+<span class="fstat-no" title="function not covered" >    fallback() external payable {}</span>
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 06 2025 20:02:43 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
