@@ -18,7 +18,10 @@ npx hardhat ignition deploy ./ignition/modules/Lock.js
 3. 部署到测试网：`npx hardhat run scripts/deploy.js --network sepolia`
 
 ## 合约功能
-- 多链拍卖功能 <mcsymbol name="sendCrossChainBid" filename="NFTAuction.sol" path="f:/计算机学习资料/Solidity学习/Solidity/Task_3/contracts/NFTAuction.sol" startline="146" type="function"></mcsymbol>
-- 动态手续费计算 <mcsymbol name="calculateDynamicFee" filename="PriceConverter.sol" path="f:/计算机学习资料/Solidity学习/Solidity/Task_3/contracts/PriceConverter.sol" startline="12" type="function"></mcsymbol>
+- 多链拍卖功能
+- 动态手续费计算
+
+## 测试报告
+- [gas-report](https://github.com/Untilthedyx/Solidity/edit/main/Task_3/gas-report.json)
 
 ## 部署信息
