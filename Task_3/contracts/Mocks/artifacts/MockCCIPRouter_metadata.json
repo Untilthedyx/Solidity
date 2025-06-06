@@ -1,0 +1,199 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "messageId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint64",
+						"name": "destinationChainSelector",
+						"type": "uint64"
+					}
+				],
+				"name": "MessageSent",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "destinationChainSelector",
+						"type": "uint64"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "receiver",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "token",
+										"type": "address"
+									},
+									{
+										"internalType": "uint256",
+										"name": "amount",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct Client.EVMTokenAmount[]",
+								"name": "tokenAmounts",
+								"type": "tuple[]"
+							},
+							{
+								"internalType": "address",
+								"name": "feeToken",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "extraArgs",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Client.EVM2AnyMessage",
+						"name": "message",
+						"type": "tuple"
+					}
+				],
+				"name": "ccipSend",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "",
+						"type": "uint64"
+					},
+					{
+						"components": [
+							{
+								"internalType": "bytes",
+								"name": "receiver",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "token",
+										"type": "address"
+									},
+									{
+										"internalType": "uint256",
+										"name": "amount",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct Client.EVMTokenAmount[]",
+								"name": "tokenAmounts",
+								"type": "tuple[]"
+							},
+							{
+								"internalType": "address",
+								"name": "feeToken",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes",
+								"name": "extraArgs",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Client.EVM2AnyMessage",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"name": "getFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Task_3/contracts/Mocks/MockCCIPRouter.sol": "MockCCIPRouter"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts/src/v0.8/ccip/libraries/Client.sol": {
+			"keccak256": "0x052174af3c87abcbf5e7754f3d3aa9d0ff5054ecef0d9d01ef087c28a468bb0b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://21399eff44df1451cdd811be827f453a37c656f91fb139c33ba6d1aaffabb771",
+				"dweb:/ipfs/QmSMZ7pC7HURgUHUmFwEcJq7S5rRbjCEGn6YydbeyieM7E"
+			]
+		},
+		"Task_3/contracts/Mocks/MockCCIPRouter.sol": {
+			"keccak256": "0xfd6563821b97882b0b1d74a33e590e85458451704997776de66af988700f2374",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c9fd350222e2843e38e48dc8a9bd1fc1dd32a3a83e5356c7ff9b1a3d99c8ec9b",
+				"dweb:/ipfs/QmfPC2372uTB9Ssjx3uupk4xQ3sMtJiN8445dfFXzT1is1"
+			]
+		}
+	},
+	"version": 1
+}
