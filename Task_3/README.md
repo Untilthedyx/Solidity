@@ -23,5 +23,8 @@ npx hardhat ignition deploy ./ignition/modules/Lock.js
 
 ## 测试报告
 - [gas-report](https://github.com/Untilthedyx/Solidity/edit/main/Task_3/gas-report.json)
+- [test-result](https://github.com/Untilthedyx/Solidity/blob/main/Task_3/test-results.txt)
+- [测试覆盖率](https://github.com/Untilthedyx/Solidity/tree/main/Task_3/coverage)
 
 ## 部署信息
+- [合约地址](https://github.com/Untilthedyx/Solidity/tree/main/Task_3/scripts/.cache)
